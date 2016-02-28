@@ -19,6 +19,9 @@ def main():
 		connection_socket=server_socket.accept()[0]
 		request=connection_socket.recv(1024)
 		reply=http_handler(request)
+		connection_socket.send("HTTP/1.1 200 OK\n") 
+		connection_socket.send("\n")
+
 		connection_socket.send(reply)
 		connection_socket.close()
 
