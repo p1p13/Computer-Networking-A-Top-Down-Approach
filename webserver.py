@@ -31,6 +31,7 @@ def main():
 	return 0
 
 def http_handler(request):
+	return request
 	start=request.find('/')
 	end=request.find('HTTP')
 	path=request[start+1:end]
